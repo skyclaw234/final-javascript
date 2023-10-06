@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Catalog with Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#callAction">Home</a></li>
+            <li><a href="#shopWrap">Catalog</a></li>
+            <li><a href="#survey-form">Contact Us</a></li>
+        </ul>
+    </nav>
+    <script>
+        // Call the function when the page loads
+        window.addEventListener("load", myFunction);
+    </script>
+  <section id="callAction">
+    <img src="images/headbanner2.png" alt="three hot sauce bottles">
+      <div>
+        <h1>Erupting<br>With<br><span>Flavor.</span></h1>
+        <button class="headerButton" data-name="Hula Heat" data-price="20.00"><a href="#shopWrap">Shop Now</a></button>
+      </div>
+    </section>
+  <section id="shopWrap">
+    <div class="catalog">
+      <div class="product">
+          <div class="product-image">
+              <img src="images/redlava.png" alt="Molten Magma" style="position: relative; top: -17px; transform: scale(1.4);">
+          </div>
+          <div class="product-details">
+              <span class="product-name"><b>Molten Magma</b></span>
+              <span class="product-description">Spicy and fiery red hot sauce.</span>
+              <span class="product-price">$10.00</span>
+              <button class="add-to-cart" data-name="Molten Magma" data-price="10.00">Add to Cart</button>
+          </div>
+      </div>
+      <div class="product">
+          <div class="product-details">
+              <span class="product-name"><b>Mango Mayhem</b></span>
+              <span class="product-description">Sweet and tangy mango-flavored hot sauce.</span>
+              <span class="product-price">$15.00</span>
+              <button class="add-to-cart" data-name="Mango Mayhem" data-price="15.00">Add to Cart</button>
+          </div>
+          <div class="product-image">
+            <img src="images/yellowlava.png" alt="Mango Mayhem" style="position: relative; top: -17px; transform: scale(1.4);">
+        </div>
+      </div>
+      <div class="product">
+          <div class="product-image">
+              <img src="images/greenlava.png" alt="Hula Heat" style="position: relative; top: -17px; transform: scale(1.4);">
+          </div>
+          <div class="product-details">
+              <span class="product-name"><b>Hula Heat</b></span>
+              <span class="product-description">Tropical and zesty green hot sauce.</span>
+              <span class="product-price">$20.00</span>
+              <button class="add-to-cart" data-name="Hula Heat" data-price="20.00">Add to Cart</button>
+          </div>
+      </div>
+  </div>
+  
+
+  <div class="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-list"></ul>
+    <p>Subtotal: $<span id="subtotal"></span></p>
+    <p id="shipping">Shipping (Free over $35): $0.00</p>
+    <p id="taxes">Taxes: $0.00</p>
+    <p><b>Total Price:</b> $<span id="total-price">0.00</span></p>
+  </div>
+  </section>
+
+<img src="images/contactformback.png" atl="lava drips form the main page">
+<div class="container">
+	<header class="header">
+		<h1 id="title">Contact Us</h1>
+		<p id="description">We will get back to you as soon as we can!</p>
+	</header>
+	<form id="survey-form">
+		<div class="field">
+			<label id="name-label" for="name">Name</label>
+			<input type="text" name="name" id="name" class="controls" placeholder="Your full name" required />
+		</div>
+		<div class="field">
+			<label id="email-label" for="email">Email</label>
+			<input type="email" name="email" id="email" class="controls" placeholder="Your Email" required />
+		</div>
+		<div class="field">
+			<label id="number-label" for="number">Phone</label>
+			<input type="number" name="number" id="number" min="9" max="100" class="controls" placeholder="Your Number" />
+		</div>
+		<div class="field">
+			<p>What is your prefered contact method?</p>
+			<label>
+				<input
+			    	name="user-recommend"
+			    	value="Yes"
+			    	type="radio"
+			    	class="input-radio"
+			    	checked
+			    />Yes</label>
+			 <label>
+			    <input
+			    	name="user-recommend"
+			    	value="No"
+			    	type="radio"
+			    	class="input-radio"
+			    />No</label>
+		</div>
+
+		<div class="field">
+			<p>Comments</p>
+			<textarea
+	        id="comments"
+	        class="input-textarea"
+	        name="comment"
+	        placeholder="Your previous experiance...."
+	        rows="6"></textarea>
+      	</div>
+      	<div class="field">
+      		<button type="submit" id="submit" class="submit-button">Submit</button>
+      	</div>
+	</form>
+</div>
+    
+    <div id="thank-you-message" style="display: none;">
+        <p>Thank you for your submission!</p>
+        <p>Name: <span id="submittedName"></span></p>
+        <p>Email or Phone: <span id="submittedContact"></span></p>
+        <p>Comments: <span id="submittedComments"></span></p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Lava Hot Sauce. All rights reserved.</p>
+    </footer>
+</body>
+</html>
