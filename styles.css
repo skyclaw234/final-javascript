@@ -202,7 +202,6 @@ p:selected {
 }
 
 .catalog {
-  backdrop-filter: blur(50px);
   display: flex;
   flex-direction: column;
   margin-right: 20px; /* Add space to the right of the catalog */
