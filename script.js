@@ -16,6 +16,26 @@ async function myFunction() {
     // Get references to all "Add to Cart" buttons
     const addToCartButtons = document.querySelectorAll(".add-to-cart");
 
+    // Function to toggle between light and dark modes
+function toggleMode() {
+  const body = document.body;
+  if (body.classList.contains("light-mode")) {
+      // Switch to dark mode
+      body.classList.remove("light-mode");
+      body.classList.add("dark-mode");
+  } else {
+      // Switch to light mode
+      body.classList.remove("dark-mode");
+      body.classList.add("light-mode");
+  }
+}
+
+// Add a click event listener to the mode toggle button
+document.getElementById("mode-toggle").addEventListener("click", toggleMode);
+
+// Call the toggleMode function when the page loads to set the initial mode
+window.addEventListener("load", toggleMode);
+
     // Add click event listeners to the "Add to Cart" buttons
     addToCartButtons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -120,4 +140,49 @@ async function myFunction() {
         taxesElement.textContent = `Taxes (AZ 8%): $${taxes.toFixed(2)}`;
         shippingElement.textContent = `Shipping (Free over $35): $${shipping.toFixed(2)}`;
       }      
+      function submitForm(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const number = document.getElementById("number").value;
+        const contactMethod = document.querySelector("input[name='user-recommend']:checked").value;
+        const comments = document.getElementById("comments").value;
+
+        // Validate email using a regular expression
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            document.getElementById("email-error").textContent = "Invalid email address";
+            return;
+        }
+
+        // Validate phone number (optional) using a regular expression
+        const phoneRegex = /^\d{9,15}$/;
+        if (number && !phoneRegex.test(number)) {
+            document.getElementById("phone-error").textContent = "Invalid phone number";
+            return;
+        }
+
+        // Clear any previous error messages
+        document.getElementById("email-error").textContent = "";
+        document.getElementById("phone-error").textContent = "";
+
+        // Create a customer object
+        const customer = {
+            name,
+            email,
+            number,
+            contactMethod,
+            comments,
+        };
+
+        // Display the thank you message with submitted info
+        document.getElementById("submitted-name").textContent = customer.name;
+        document.getElementById("submitted-contact-method").textContent = customer.contactMethod;
+        document.getElementById("submitted-contact-info").textContent = customer[customer.contactMethod];
+        document.getElementById("submitted-comments").textContent = customer.comments;
+
+        // Show the thank you message and reset the form
+        document.getElementById("survey-form").reset();
+        document.getElementById("thank-you-message").style.display = "block";
+    }
 } // Define an array to store the items in the cart
