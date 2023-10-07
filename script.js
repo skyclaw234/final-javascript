@@ -143,9 +143,9 @@ window.addEventListener("load", toggleMode);
 }
       function submitForm(event) {
         event.preventDefault();
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const number = document.getElementById("number").value;
+        const name = document.getElementById("first-name").value;
+const email = document.getElementById("email").value;
+const number = document.getElementById("number").value;
         const contactMethod = document.querySelector("input[name='user-recommend']:checked").value;
         const comments = document.getElementById("comments").value;
 

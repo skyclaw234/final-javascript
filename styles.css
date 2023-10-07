@@ -269,6 +269,11 @@ color : #ffffff;
 outline : 0;
 transition : background-color 2s ease-out;
 }
+
+#thank-you-message{
+color: white;
+}
+
 footer {
 color : white;
 background-color : #222222;
