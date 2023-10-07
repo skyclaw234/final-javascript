@@ -181,6 +181,3 @@ function submitForm(event) {
   document.getElementById("survey-form").reset();
   document.getElementById("thank-you-message").style.display = "block";
 }
-
-
-// Define an array to store the items in the cart
