@@ -164,6 +164,12 @@ h1{
   font-size: 72px;
 }
 
+h1.light-mode{
+  color: black;
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 72px;
+}
+
 h1 span{
   color: #EB002E;
 }
