@@ -176,7 +176,7 @@ function submitForm(event) {
   document.getElementById("submitted-contact-method").textContent = contactMethod;
   document.getElementById("submitted-contact-info").textContent = "Email: " + email + " | Phone: " + number;
 
-  document.getElementById("submitted-comments").textContent = "Comments: " + comments;
+  document.getElementById("submitted-comments").textContent = comments;
 
   // Show the thank you message and reset the form
   document.getElementById("survey-form").reset();
