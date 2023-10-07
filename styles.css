@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600;900&family=Roboto:wght@100;300&family=Seymour+One&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600;900&family=Roboto:wght@100;300&family=Seymour+One&display=swap');
+
 :root {
 --color-white : #fbfbfb;
 --color-acent : #EB002E;
@@ -270,8 +271,8 @@ outline : 0;
 transition : background-color 2s ease-out;
 }
 
-#thank-you-message{
-color: white;
+#thank-you-message {
+  color: white;
 }
 
 footer {

@@ -141,49 +141,46 @@ window.addEventListener("load", toggleMode);
         shippingElement.textContent = `Shipping (Free over $35): $${shipping.toFixed(2)}`;
       }      
 }
-      function submitForm(event) {
-        event.preventDefault();
-        const name = document.getElementById("first-name").value;
-const email = document.getElementById("email").value;
-const number = document.getElementById("number").value;
-        const contactMethod = document.querySelector("input[name='user-recommend']:checked").value;
-        const comments = document.getElementById("comments").value;
+function submitForm(event) {
+  event.preventDefault();
+  const firstName = document.getElementById("first-name").value;
+  const lastName = document.getElementById("last-name").value;
+  const email = document.getElementById("email").value;
+  const number = document.getElementById("number").value;
+  const contactMethod = document.querySelector("input[name='user-recommend']:checked").value;
+  const comments = document.getElementById("comments").value;
 
-        // Validate email using a regular expression
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            document.getElementById("email-error").textContent = "Invalid email address";
-            return;
-        }
+  // Validate email using a regular expression
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+      document.getElementById("email-error").textContent = "Invalid email address";
+      return;
+  }
 
-        // Validate phone number (optional) using a regular expression
-        const phoneRegex = /^\d{9,15}$/;
-        if (number && !phoneRegex.test(number)) {
-            document.getElementById("phone-error").textContent = "Invalid phone number";
-            return;
-        }
+  // Validate phone number (optional) using a regular expression
+  const phoneRegex = /^\d{9,15}$/;
+  if (number && !phoneRegex.test(number)) {
+      document.getElementById("phone-error").textContent = "Invalid phone number";
+      return;
+  }
 
-        // Clear any previous error messages
-        document.getElementById("email-error").textContent = "";
-        document.getElementById("phone-error").textContent = "";
+  // Clear any previous error messages
+  document.getElementById("email-error").textContent = "";
+  document.getElementById("phone-error").textContent = "";
 
-        // Create a customer object
-        const customer = {
-            name,
-            email,
-            number,
-            contactMethod,
-            comments,
-        };
+  // Display the thank you message with submitted info
+  document.getElementById("submitted-name").textContent = `${firstName} ${lastName}`;
+  
+  // Display both email and phone inputs
+  document.getElementById("submitted-contact-method").textContent = contactMethod;
+  document.getElementById("submitted-contact-info").textContent = "Email: " + email + " | Phone: " + number;
+  
+  document.getElementById("submitted-comments").textContent = "Comments: " + comments;
 
-        // Display the thank you message with submitted info
-        document.getElementById("submitted-name").textContent = customer.name;
-        document.getElementById("submitted-contact-method").textContent = customer.contactMethod;
-        document.getElementById("submitted-contact-info").textContent = customer[customer.contactMethod];
-        document.getElementById("submitted-comments").textContent = customer.comments;
+  // Show the thank you message and reset the form
+  document.getElementById("survey-form").reset();
+  document.getElementById("thank-you-message").style.display = "block";
+}
 
-        // Show the thank you message and reset the form
-        document.getElementById("survey-form").reset();
-        document.getElementById("thank-you-message").style.display = "block";
-    }
+
 // Define an array to store the items in the cart
