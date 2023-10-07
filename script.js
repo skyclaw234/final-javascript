@@ -140,6 +140,7 @@ window.addEventListener("load", toggleMode);
         taxesElement.textContent = `Taxes (AZ 8%): $${taxes.toFixed(2)}`;
         shippingElement.textContent = `Shipping (Free over $35): $${shipping.toFixed(2)}`;
       }      
+}
       function submitForm(event) {
         event.preventDefault();
         const name = document.getElementById("name").value;
@@ -185,4 +186,4 @@ window.addEventListener("load", toggleMode);
         document.getElementById("survey-form").reset();
         document.getElementById("thank-you-message").style.display = "block";
     }
-} // Define an array to store the items in the cart
+// Define an array to store the items in the cart
