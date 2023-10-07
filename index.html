@@ -24,7 +24,7 @@
     <img src="images/headbanner2.png" alt="three hot sauce bottles">
       <div>
         <h1>Erupting<br>With<br><span>Flavor.</span></h1>
-        <button class="headerButton" data-name="Hula Heat" data-price="20.00"><a href="#shopWrap">Shop Now</a></button>
+        <button class="headerButton" data-name="Hula Heat" data-price="20.00">Shop Now</button>
       </div>
     </section>
   <section id="shopWrap">
@@ -75,7 +75,7 @@
   </div>
   </section>
 
-<img src="images/contactformback.png" atl="lava drips form the main page">
+<img src="images/contactformback.png" alt="lava drips from the main page">
 <div class="container">
     <header class="header">
         <h1 id="title">Contact Us</h1>
@@ -83,8 +83,12 @@
     </header>
     <form id="survey-form" onsubmit="submitForm(event)">
         <div class="field">
-            <label id="name-label" for="name">Name</label>
-            <input type="text" name="name" id="name" class="controls" placeholder="Your full name" required />
+            <label id="first-name-label" for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" class="controls" placeholder="Your first name" required />
+        </div>
+        <div class="field">
+            <label id="last-name-label" for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name" class="controls" placeholder="Your last name" required />
         </div>
         <div class="field">
             <label id="email-label" for="email">Email</label>
@@ -138,13 +142,6 @@
         <p>Comments: <span id="submitted-comments"></span></p>
     </div>
 </div>
-    
-    <div id="thank-you-message" style="display: none;">
-        <p>Thank you for your submission!</p>
-        <p>Name: <span id="submittedName"></span></p>
-        <p>Email or Phone: <span id="submittedContact"></span></p>
-        <p>Comments: <span id="submittedComments"></span></p>
-    </div>
     <footer>
         <p>&copy; 2023 Lava Hot Sauce. All rights reserved.</p>
     </footer>
