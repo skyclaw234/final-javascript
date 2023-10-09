@@ -139,6 +139,7 @@ async function myFunction() {
       // Display taxes and shipping
       taxesElement.textContent = `Taxes (AZ 8%): $${taxes.toFixed(2)}`;
       shippingElement.textContent = `Shipping (Free over $35): $${shipping.toFixed(2)}`;
+      
   }
 }
 
